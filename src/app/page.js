@@ -70,7 +70,7 @@ export default function Home() {
         transition={{ duration: 0.4 }}
       >
         <motion.input
-          className="w-full p-3 border border-brand-blue rounded-xl text-lg focus:ring-2 focus:ring-brand-blue focus:outline-none"
+          className="w-full p-3 border border-brand-blue rounded-xl text-lg text-gray-800 focus:ring-2 focus:ring-brand-blue focus:outline-none"
           placeholder="Enter your wallet address"
           value={walletAddress}
           onChange={(e) => setWalletAddress(e.target.value)}

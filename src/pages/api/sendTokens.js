@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
     const wallet = new Wallet(mnemonic);
     const secretjs = new SecretNetworkClient({
-      chainId: "pulsar-3",
+      chainId: "Pulsar-3",
       url: "https://pulsar.lcd.secretnodes.com",
       wallet,
       walletAddress: wallet.address,
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
     // Execute the transaction and wait for completion
     const tx = await secretjs.tx.bank.send(
       {
-        amount: [{ amount: "10000000", denom: "uscrt" }],
+        amount: [{ amount: "50000000", denom: "uscrt" }],
         from_address: wallet.address,
         to_address: walletAddress,
       },
