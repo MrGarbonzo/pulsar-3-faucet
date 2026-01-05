@@ -23,8 +23,10 @@ export default async function handler(req, res) {
       throw new Error("Mnemonic not found in environment variables.");
     }
 
-    // Debug: log mnemonic length and wallet address
+    // Debug: log mnemonic details
+    console.log("Raw mnemonic length:", mnemonic.length);
     console.log("Mnemonic word count:", mnemonic.trim().split(/\s+/).length);
+    console.log("First 10 chars:", mnemonic.substring(0, 10));
 
     const wallet = new Wallet(mnemonic.trim());
     console.log("Wallet address:", wallet.address);
