@@ -23,7 +23,11 @@ export default async function handler(req, res) {
       throw new Error("Mnemonic not found in environment variables.");
     }
 
-    const wallet = new Wallet(mnemonic);
+    // Debug: log mnemonic length and wallet address
+    console.log("Mnemonic word count:", mnemonic.trim().split(/\s+/).length);
+
+    const wallet = new Wallet(mnemonic.trim());
+    console.log("Wallet address:", wallet.address);
     const secretjs = new SecretNetworkClient({
       chainId: "Pulsar-3",
       url: "https://pulsar.lcd.secretnodes.com",
