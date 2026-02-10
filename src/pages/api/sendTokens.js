@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
     const wallet = new Wallet(mnemonic.trim());
     const secretjs = new SecretNetworkClient({
-      chainId: "Pulsar-3",
+      chainId: "pulsar-3",
       url: "https://pulsar.lcd.secretnodes.com",
       wallet,
       walletAddress: wallet.address,
@@ -61,8 +61,8 @@ export default async function handler(req, res) {
     }
 
     // Generic error response
-    return res.status(500).json({ 
-      error: "Transaction failed. Please try again later." 
+    return res.status(500).json({
+      error: "Transaction failed. Please try again later."
     });
   }
 }
